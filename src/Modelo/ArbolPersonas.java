@@ -153,6 +153,49 @@ public class ArbolPersonas implements IArbolPersonas{
 	    raiz = eliminarRec(raiz, persona);
 	}
 	
+	public void inOrden() {
+	    System.out.println("Recorrido InOrden:");
+	    inOrdenRec(raiz);
+	    System.out.println();
+	}
+
+	public void preOrden() {
+	    System.out.println("Recorrido PreOrden:");
+	    preOrdenRec(raiz);
+	    System.out.println();
+	}
+
+	public void postOrden() {
+	    System.out.println("Recorrido PostOrden:");
+	    postOrdenRec(raiz);
+	    System.out.println();
+	}
+	
+	private void inOrdenRec(INodo nodo) {
+	    if (nodo != null) {
+	        inOrdenRec(nodo.getIzquierdo());
+	        System.out.print(nodo.getDato() + " ");
+	        inOrdenRec(nodo.getDerecho());
+	    }
+	}
+
+	private void preOrdenRec(INodo nodo) {
+	    if (nodo != null) {
+	        System.out.print(nodo.getDato() + " ");
+	        preOrdenRec(nodo.getIzquierdo());
+	        preOrdenRec(nodo.getDerecho());
+	    }
+	}
+
+	private void postOrdenRec(INodo nodo) {
+	    if (nodo != null) {
+	        postOrdenRec(nodo.getIzquierdo());
+	        postOrdenRec(nodo.getDerecho());
+	        System.out.print(nodo.getDato() + " ");
+	    }
+	}
+
+
 	
 
 
