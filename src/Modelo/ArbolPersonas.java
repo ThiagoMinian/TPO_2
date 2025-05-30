@@ -43,6 +43,8 @@ public class ArbolPersonas implements IArbolPersonas{
 	private INodo insertarRec(INodo nodo, IPersona pers){
 		if (nodo == null){
 		INodo personaNueva = new Nodo(pers);
+		System.out.println(pers);
+		System.out.println("Se ingreso correctamente");
 		   return personaNueva;
 	}
 		
